@@ -6,140 +6,101 @@
     <title>JPAI-PG 女神【橙子】</title>
     <style>
         :root {
-            --primary-blue: #4a77d4;
+            --primary-blue: #4471cc;
             --bg-gradient: linear-gradient(135deg, #eef2f7 0%, #dfe6e9 100%);
-            --card-pink: linear-gradient(135deg, #fff0f2 0%, #ffe3e7 100%);
         }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-
         body {
             background: var(--bg-gradient);
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            padding: 20px;
-            color: #333;
+            align-items: center;
+            padding: 20px 10px;
         }
-
-        .container {
-            width: 100%;
-            max-width: 450px;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
+        .card {
+            background: white;
             border-radius: 24px;
+            width: 100%;
+            max-width: 400px;
             padding: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 
-                        inset 0 1px 0 rgba(255, 255, 255, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(168, 180, 194, 0.3);
         }
-
-        /* 头部用户信息 */
         .header {
             display: flex;
             align-items: center;
             gap: 16px;
             margin-bottom: 20px;
         }
-
-        .avatar-wrapper {
+        .avatar-container {
             position: relative;
-            width: 70px;
-            height: 70px;
         }
-
         .avatar {
-            width: 100%;
-            height: 100%;
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
-            border: 3px solid #fff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #4471cc;
         }
-
-        /* 可以在这里给头像加个精致的装饰效果 */
-        .avatar-wrapper::after {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            border: 1px dashed rgba(74, 119, 212, 0.4);
-        }
-
-        .title {
+        .name {
             font-size: 20px;
-            font-weight: bold;
-            color: #2c3e50;
+            font-weight: 700;
+            color: #2d3748;
         }
-
-        /* 优惠说明卡片 */
-        .info-card {
-            background: var(--card-pink);
+        .notice-box {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
             border-radius: 16px;
             padding: 16px;
+            color: #e53e3e;
             font-size: 14px;
             line-height: 1.6;
-            color: #d63031;
             margin-bottom: 24px;
-            box-shadow: inset 0 1px 3px rgba(255,255,255,0.6), 0 4px 12px rgba(214, 48, 49, 0.05);
-            border: 1px solid rgba(255, 190, 199, 0.5);
         }
-
-        /* ID 复制栏 */
-        .id-bar {
+        .id-box {
+            background: linear-gradient(145deg, #4d79d6, #3b65be);
+            border-radius: 16px;
+            padding: 16px;
             display: flex;
-            background: linear-gradient(135deg, #4a77d4 0%, #3a62b8 100%);
-            border-radius: 14px;
-            padding: 4px;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 20px;
-            box-shadow: 0 6px 15px rgba(74, 119, 212, 0.3);
+            align-items: center;
+            color: white;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(59, 101, 190, 0.2);
         }
-
         .id-text {
-            color: #fff;
-            font-size: 16px;
-            font-weight: 600;
-            padding-left: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
-
         .btn-copy {
             background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 10px;
-            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 12px;
             font-size: 14px;
-            font-weight: bold;
+            font-weight: 600;
+            cursor: pointer;
             display: flex;
             align-items: center;
             gap: 6px;
             transition: all 0.2s;
-            backdrop-filter: blur(5px);
         }
-
         .btn-copy:active {
-            background: rgba(255, 255, 255, 0.4);
-            transform: scale(0.97);
+            transform: scale(0.95);
+            background: rgba(255, 255, 255, 0.3);
         }
-
-        /* 下载与打开按钮组 */
-        .action-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 28px;
-        }
-
         .btn-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: linear-gradient(145deg, #4471cc, #3b65be);
             color: white;
             border: none;
@@ -148,171 +109,114 @@
             font-size: 15px;
             font-weight: 600;
             text-decoration: none;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
             box-shadow: 0 5px 15px rgba(59, 101, 190, 0.25);
             transition: all 0.2s;
         }
-
         .btn-action:active {
             transform: scale(0.95);
             box-shadow: 0 2px 8px rgba(59, 101, 190, 0.2);
         }
-
-        /* 引导区域标题 */
         .guide-title {
-            font-size: 15px;
-            font-weight: bold;
-            color: #666;
-            margin-bottom: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #4a5568;
+            margin: 24px 0 12px 0;
             display: flex;
             align-items: center;
             gap: 6px;
         }
-
-        /* 指引图片样式还原 */
-        .guide-box {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 10px;
-            background: #fff;
-            padding: 12px;
-            border-radius: 16px;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.02), 0 4px 15px rgba(0,0,0,0.03);
-            border: 1px solid #eef2f5;
-        }
-
-        .guide-step {
-            position: relative;
-            border: 1px solid #f0f0f0;
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .guide-step img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .step-tag {
-            position: absolute;
-            top: 6px;
-            left: 6px;
-            background: rgba(0,0,0,0.6);
-            color: #fff;
-            font-size: 10px;
-            padding: 2px 6px;
-            border-radius: 20px;
-            backdrop-filter: blur(2px);
-        }
-
-        /* 提示弹窗 */
         .toast {
             position: fixed;
             bottom: 40px;
             left: 50%;
             transform: translateX(-50%) translateY(20px);
-            background: rgba(0, 0, 0, 0.75);
-            color: #fff;
-            padding: 10px 24px;
-            border-radius: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 20px;
             font-size: 14px;
+            font-weight: 500;
             opacity: 0;
             transition: all 0.3s ease;
+            z-index: 1000;
             pointer-events: none;
-            z-index: 999;
         }
         .toast.show {
-            opacity: 1;
             transform: translateX(-50%) translateY(0);
+            opacity: 1;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <div class="avatar-wrapper">
-            <img class="avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" alt="头像">
+    <div class="card">
+        <div class="header">
+            <div class="avatar-container">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="头像" class="avatar">
+            </div>
+            <div class="name">JPAI-PG 女神【橙子】</div>
         </div>
-        <div class="title">JPAI-PG 女神【橙子】</div>
-    </div>
 
-    <div class="info-card">
-        添加 JPAI-PG 女神【橙子】充值每笔立享 5% 优惠；专属美女客服为您提供优质服务，优先办理各类业务，尊享专属特权！
-    </div>
+        <div class="notice-box">
+            添加 JPAI-PG 女神【橙子】充值每笔立享 5% 优惠；专属美女客服为您提供优质服务，优先办理各类业务，尊享专属特权！
+        </div>
 
-    <div class="id-bar">
-        <div class="id-text" id="idValue">JPAI ID: 301301</div>
-        <button class="btn-copy" onclick="copyId()">
-            复制 📋
-        </button>
-    </div>
+        <div class="id-box">
+            <div class="id-text">JPAI ID: 301301</div>
+            <button class="btn-copy" onclick="copyId()">复制 📋</button>
+        </div>
 
-    <div class="action-group">
-        <a href="https://your-download-link.com" class="btn-action">下载JPAI 📥</a>
-        <a href="jpai://open" class="btn-action">点击打开JPAI ↗️</a>
-    </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 5px;">
+            <a href="https://www.jpai.one/home" class="btn-action">下载JPAI 📥</a>
+            <a href="jpai://jpai.app/open" class="btn-action">点击打开JPAI ↗️</a>
+        </div>
 
-    <!-- 底部指引区域 -->
-    <div class="guide-title">💡 操作指引</div>
-    <div class="guide-title">💡 操作指引</div>
-    <div class="guide-box" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 100%; margin: 0 auto;">
-        
-        <div class="guide-step" style="display: flex; flex-direction: column; height: 260px; background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #eee; position: relative;">
-            <span class="step-tag" style="background: rgba(0,0,0,0.6); color: #fff; padding: 4px 8px; font-size: 11px; position: absolute; top: 0; left: 0; z-index: 10; border-radius: 0 0 8px 0; border: none;">步骤 1</span>
-            <div style="flex: 1; width: 100%; height: 100%; overflow: hidden;">
-                <img src="step1.png" alt="点击添加好友" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; border-radius: 0; margin: 0; padding: 0;">
+        <div class="guide-title">💡 操作指引</div>
+        <div class="guide-box" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 100%; margin: 0 auto;">
+            <div class="guide-step" style="display: flex; flex-direction: column; height: 260px; background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #eee; position: relative;">
+                <span style="background: rgba(0,0,0,0.6); color: #fff; padding: 4px 8px; font-size: 11px; position: absolute; top: 0; left: 0; z-index: 10; border-radius: 0 0 8px 0;">步骤 1</span>
+                <div style="flex: 1; width: 100%; height: 100%; overflow: hidden;">
+                    <img src="step1.png" alt="点击添加好友" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+                </div>
+            </div>
+            <div class="guide-step" style="display: flex; flex-direction: column; height: 260px; background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #eee; position: relative;">
+                <span style="background: rgba(0,0,0,0.6); color: #fff; padding: 4px 8px; font-size: 11px; position: absolute; top: 0; left: 0; z-index: 10; border-radius: 0 0 8px 0;">步骤 2</span>
+                <div style="flex: 1; width: 100%; height: 100%; overflow: hidden;">
+                    <img src="step2.png" alt="粘贴并搜索" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+                </div>
             </div>
         </div>
-        
-        <div class="guide-step" style="display: flex; flex-direction: column; height: 260px; background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #eee; position: relative;">
-            <span class="step-tag" style="background: rgba(0,0,0,0.6); color: #fff; padding: 4px 8px; font-size: 11px; position: absolute; top: 0; left: 0; z-index: 10; border-radius: 0 0 8px 0; border: none;">步骤 2</span>
-            <div style="flex: 1; width: 100%; height: 100%; overflow: hidden;">
-                <img src="step2.png" alt="粘贴并搜索" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; border-radius: 0; margin: 0; padding: 0;">
-            </div>
-        </div>
-
     </div>
 
-<script>
-    // 复制 ID 的逻辑
-    function copyId() {
-        const idNumber = "301301"; // 需要复制的纯数字
-        
-        // 创建临时输入框用于复制
-        const tempInput = document.createElement("input");
-        tempInput.value = idNumber;
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        tempInput.setSelectionRange(0, 99999); // 对移动端友好
-        
-        try {
-            document.execCommand("copy");
-            showToast("复制成功：301301");
-        } catch (err) {
-            showToast("复制失败，请手动长按复制");
+    <div class="toast" id="toast">复制成功，去添加好友吧！</div>
+
+    <script>
+        function copyId() {
+            const idText = "301301";
+            navigator.clipboard.writeText(idText).then(() => {
+                showToast();
+            }).catch(() => {
+                const textArea = document.createElement("textarea");
+                textArea.value = idText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast();
+                } catch (err) {
+                    alert('复制失败，请手动长按复制 ID');
+                }
+                document.body.removeChild(textArea);
+            });
         }
-        
-        document.body.removeChild(tempInput);
-    }
 
-    // 弹窗提示逻辑
-    function showToast(message) {
-        const toast = document.getElementById("toast");
-        toast.innerText = message;
-        toast.classList.add("show");
-        setTimeout(() => {
-            toast.classList.remove("show");
-        }, 2000);
-    }
-</script>
-
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+        }
+    </script>
 </body>
 </html>

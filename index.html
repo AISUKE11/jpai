@@ -262,26 +262,24 @@
 
     <!-- 底部指引区域 -->
     <div class="guide-title">💡 操作指引</div>
-    <div class="guide-box">
-        <!-- 步骤1: 点击添加好友 -->
-        <div class="guide-step">
-            <span class="step-tag">步骤 1</span>
-            <img src="step1.png" alt="点击添加好友">
+    <div class="guide-title">💡 操作指引</div>
+    <div class="guide-box" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 100%; margin: 0 auto;">
+        
+        <div class="guide-step" style="display: flex; flex-direction: column; height: 260px; background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #eee; position: relative;">
+            <span class="step-tag" style="background: rgba(0,0,0,0.6); color: #fff; padding: 4px 8px; font-size: 11px; position: absolute; top: 0; left: 0; z-index: 10; border-radius: 0 0 8px 0; border: none;">步骤 1</span>
+            <div style="flex: 1; width: 100%; height: 100%; overflow: hidden;">
+                <img src="step1.png" alt="点击添加好友" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; border-radius: 0; margin: 0; padding: 0;">
+            </div>
         </div>
-        <!-- 步骤2: 粘贴并搜索 -->
-        <div class="guide-step">
-            <span class="step-tag">步骤 2</span>
-            <img src="step2.png" alt="粘贴并搜索">
+        
+        <div class="guide-step" style="display: flex; flex-direction: column; height: 260px; background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #eee; position: relative;">
+            <span class="step-tag" style="background: rgba(0,0,0,0.6); color: #fff; padding: 4px 8px; font-size: 11px; position: absolute; top: 0; left: 0; z-index: 10; border-radius: 0 0 8px 0; border: none;">步骤 2</span>
+            <div style="flex: 1; width: 100%; height: 100%; overflow: hidden;">
+                <img src="step2.png" alt="粘贴并搜索" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; border-radius: 0; margin: 0; padding: 0;">
+            </div>
         </div>
-    </div>
-        <div class="guide-step">
-            <span class="step-tag">步骤 2</span>
-            <img src="https://via.placeholder.com/180x260/f8f9fa/333?text=Paste+and+Search" alt="粘贴并搜索">
-        </div>
-    </div>
-</div>
 
-<div class="toast" id="toast">复制成功，去粘贴吧！</div>
+    </div>
 
 <script>
     // 复制 ID 的逻辑
